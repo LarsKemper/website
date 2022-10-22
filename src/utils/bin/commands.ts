@@ -34,21 +34,14 @@ export const about = async (args: string[]): Promise<string> => {
 Welcome to my website!
 More about me:
 'sumfetch' - short summary.
-'resume' - my latest resume.
 'readme' - my github readme.`;
 };
 
-export const resume = async (args: string[]): Promise<string> => {
-  window.open(`${config.resume_url}`);
-  return 'Opening resume...';
-};
-
-// Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
+// projects
+export const projects = async (args: string[]): Promise<string> => {
+  return `thank you for your interest. My public work:
+- <u><a href="https://${config.projects.passtrans.link}" target="_blank">${config.projects.passtrans.link}</a></u> - ${config.projects.passtrans.description}
+- <u><a href="https://${config.projects.pipeline.link}" target="_blank">${config.projects.pipeline.link}</a></u> - ${config.projects.pipeline.description}
 `;
 };
 
@@ -110,7 +103,7 @@ directories`;
 
 export const cd = async (args: string[]): Promise<string> => {
   return `unfortunately, i cannot afford more directories.
-if you want to help, you can type 'donate'.`;
+if you want to view my projects, you can type 'projects'.`;
 };
 
 export const date = async (args: string[]): Promise<string> => {
@@ -141,15 +134,20 @@ export const sudo = async (args?: string[]): Promise<string> => {
 // Banner
 export const banner = (args?: string[]): string => {
   return `
-█████        ███                       ███████████                                   
-░░███        ░░░                       ░█░░░███░░░█                                   
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████  
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███ 
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
- ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
-
+██╗      █████╗ ██████╗ ███████╗                   
+██║     ██╔══██╗██╔══██╗██╔════╝                   
+██║     ███████║██████╔╝███████╗                   
+██║     ██╔══██║██╔══██╗╚════██║                   
+███████╗██║  ██║██║  ██║███████║                   
+╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝                   
+                                                   
+██╗  ██╗███████╗███╗   ███╗██████╗ ███████╗██████╗ 
+██║ ██╔╝██╔════╝████╗ ████║██╔══██╗██╔════╝██╔══██╗
+█████╔╝ █████╗  ██╔████╔██║██████╔╝█████╗  ██████╔╝
+██╔═██╗ ██╔══╝  ██║╚██╔╝██║██╔═══╝ ██╔══╝  ██╔══██╗
+██║  ██╗███████╗██║ ╚═╝ ██║██║     ███████╗██║  ██║
+╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝
+                                                   
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
 Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
